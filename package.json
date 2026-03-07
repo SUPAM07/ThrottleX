@@ -1,21 +1,17 @@
 {
   "name": "distributed-rate-limiter",
   "version": "1.0.0",
-  "description": "//hello",
+  "description": "Distributed Rate Limiter",
   "main": "dist/server/server.js",
-"scripts": {
-  "dev": "ts-node-dev --respawn src/server/server.ts",
-  "build": "tsc",
-  "start": "node dist/server.js"
-},
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/server/server.ts",
+    "build": "tsc",
+    "start": "node dist/server/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SUPAM07/Distributed-Rate-Limiter.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/SUPAM07/Distributed-Rate-Limiter/issues"
   },
