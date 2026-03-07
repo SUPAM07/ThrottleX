@@ -2,7 +2,7 @@
   "name": "distributed-rate-limiter",
   "version": "1.0.0",
   "description": "//hello",
-  "main": "index.js",
+  "main": "dist/server/server.js",
 "scripts": {
   "dev": "ts-node-dev --respawn src/server/server.ts",
   "build": "tsc",
