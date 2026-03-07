@@ -1,9 +1,11 @@
 import { RateLimitAlgorithm } from "./rateLimitAlgorithm"
 import { FixedWindow } from "../algorithms/fixedWindow"
+import { TokenBucket } from "../algorithms/tokenBucket"
 import { RateLimiterBackend } from "./rateLimiterBackend"
 
 export type AlgorithmType =
   | "fixed_window"
+  | "token_bucket"
 
 export class AlgorithmFactory {
 
@@ -20,6 +22,13 @@ export class AlgorithmFactory {
           backend,
           config.capacity,
           config.windowMs
+        )
+
+      case "token_bucket":
+        return new TokenBucket(
+          backend,
+          config.capacity,
+          config.refillRate
         )
 
       default:
