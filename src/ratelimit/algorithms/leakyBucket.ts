@@ -14,6 +14,7 @@ export class LeakyBucket implements RateLimitAlgorithm {
     private leakRate: number
   ) {}
 
+  
   async allowRequest(key: string): Promise<RateLimitResult> {
 
     const now = Date.now()
