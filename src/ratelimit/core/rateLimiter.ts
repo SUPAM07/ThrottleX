@@ -1,7 +1,7 @@
-import { RateLimitAlgorithm } from "./rateLimitAlgorithm"
-import { RateLimitResult } from "./rateLimitAlgorithm"
+import { RateLimitAlgorithm, RateLimitResult } from "./rateLimitAlgorithm"
+import { LimitComponent } from "../composite/limitComponent"
 
-export class RateLimiter {
+export class RateLimiter implements LimitComponent {
 
   constructor(
     private algorithm: RateLimitAlgorithm

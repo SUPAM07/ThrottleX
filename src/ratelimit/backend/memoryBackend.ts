@@ -55,4 +55,19 @@ export class MemoryBackend implements RateLimiterBackend {
     this.store.delete(key)
   }
 
+  async update<T>(
+    key: string,
+    updater: (value: T | null) => T,
+    ttl?: number
+  ): Promise<T> {
+
+    const current = await this.get(key)
+
+    const updated = updater(current)
+
+    await this.set(key, updated, ttl)
+
+    return updated
+  }
+
 }
