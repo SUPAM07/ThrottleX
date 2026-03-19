@@ -1,0 +1,67 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:7.2-alpine
+    container_name: rate-limiter-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --protected-mode no
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - rate-limiter-net
+
+  rate-limiter:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: rate-limiter-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      REDIS_URL: redis://redis:6379
+      PORT: 3000
+      DEFAULT_RATE_LIMIT: 100
+      DEFAULT_WINDOW_MS: 60000
+      ADAPTIVE_ENABLED: "true"
+      GEO_ENABLED: "true"
+      METRICS_ENABLED: "true"
+      LOG_LEVEL: info
+    env_file:
+      - ../.env
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    networks:
+      - rate-limiter-net
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 128M
+
+volumes:
+  redis_data:
+    driver: local
+
+networks:
+  rate-limiter-net:
+    driver: bridge

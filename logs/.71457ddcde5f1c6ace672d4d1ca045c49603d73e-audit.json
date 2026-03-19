@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "/Users/supamroy/Desktop/ADAPTIVE RATE LIMITER/logs/.71457ddcde5f1c6ace672d4d1ca045c49603d73e-audit.json",
+    "files": [
+        {
+            "date": 1772894986763,
+            "name": "/Users/supamroy/Desktop/ADAPTIVE RATE LIMITER/logs/error-2026-03-07.log",
+            "hash": "ee97108e78607979c3bfc4ed4683b27fcf82688377f18d3c2910291c9391c8a1"
+        },
+        {
+            "date": 1772976449360,
+            "name": "/Users/supamroy/Desktop/ADAPTIVE RATE LIMITER/logs/error-2026-03-08.log",
+            "hash": "0fb8fdb39147888e55a9c89c4986e78748b9763853bf8c0c2229b4341d529887"
+        },
+        {
+            "date": 1773057436257,
+            "name": "/Users/supamroy/Desktop/ADAPTIVE RATE LIMITER/logs/error-2026-03-09.log",
+            "hash": "50a14b13c08c17f4588ffd8d3fab5ca577dbf648cf7626410631f67ef8f4991d"
+        }
+    ],
+    "hashType": "sha256"
+}

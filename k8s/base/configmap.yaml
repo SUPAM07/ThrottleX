@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rate-limiter-config
+data:
+  NODE_ENV: "production"
+  PORT: "3000"
+  LOG_LEVEL: "info"
+  DEFAULT_RATE_LIMIT: "100"
+  DEFAULT_WINDOW_MS: "60000"
+  DEFAULT_ALGORITHM: "token_bucket"
+  ADAPTIVE_ENABLED: "true"
+  GEO_ENABLED: "true"
+  METRICS_ENABLED: "true"
+  CIRCUIT_BREAKER_THRESHOLD: "5"
+  CIRCUIT_BREAKER_TIMEOUT_MS: "30000"

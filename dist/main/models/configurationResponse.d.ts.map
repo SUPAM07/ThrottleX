@@ -1,0 +1,1 @@
+{"version":3,"file":"configurationResponse.d.ts","sourceRoot":"","sources":["../../../src/main/models/configurationResponse.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,qBAAqB;IACpC,gBAAgB,EAAE,MAAM,CAAC;IACzB,YAAY,EAAE,MAAM,CAAC;IACrB,eAAe,EAAE,MAAM,CAAC;IACxB,eAAe,EAAE,OAAO,CAAC;IACzB,UAAU,EAAE,OAAO,CAAC;IACpB,qBAAqB,EAAE,OAAO,CAAC;IAC/B,cAAc,EAAE,OAAO,CAAC;CACzB"}

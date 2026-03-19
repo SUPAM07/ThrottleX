@@ -1,0 +1,190 @@
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:26:06.100Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:26:06.101Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:26:06.101Z"}
+{"count":1,"key":"test:key","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:26:06.155Z"}
+{"count":1,"key":"test:degraded","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:26:06.157Z"}
+{"count":1,"key":"test:key2","level":"warn","limit":5,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:26:06.157Z"}
+{"level":"warn","message":"Circuit breaker [test]: OPEN → HALF_OPEN","timestamp":"2026-03-07T14:26:06.253Z"}
+{"count":1,"key":"test:key","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:49:46.766Z"}
+{"count":1,"key":"test:degraded","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:49:46.769Z"}
+{"count":1,"key":"test:key2","level":"warn","limit":5,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:49:46.770Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:49:46.818Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:49:46.818Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:49:46.819Z"}
+{"level":"warn","message":"Circuit breaker [test]: OPEN → HALF_OPEN","timestamp":"2026-03-07T14:49:46.970Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:59:08.958Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:59:08.962Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:59:08.962Z"}
+{"count":1,"key":"test:key","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:59:08.989Z"}
+{"count":1,"key":"test:degraded","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:59:08.989Z"}
+{"count":1,"key":"test:key2","level":"warn","limit":5,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:59:08.990Z"}
+{"level":"warn","message":"Circuit breaker [test]: OPEN → HALF_OPEN","timestamp":"2026-03-07T14:59:09.114Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:59:16.854Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:59:16.856Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T14:59:16.856Z"}
+{"count":1,"key":"test:key","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:59:16.874Z"}
+{"count":1,"key":"test:degraded","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:59:16.875Z"}
+{"count":1,"key":"test:key2","level":"warn","limit":5,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T14:59:16.875Z"}
+{"level":"warn","message":"Circuit breaker [test]: OPEN → HALF_OPEN","timestamp":"2026-03-07T14:59:17.007Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.172Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.174Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.174Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.174Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.175Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.175Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.175Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.175Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.175Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.176Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":2,"level":"info","message":"Compliance zone registered","name":"CUSTOM","timestamp":"2026-03-07T15:02:05.177Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.178Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.178Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.178Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.178Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:05.178Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:05.178Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:05.178Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:05.178Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:05.192Z"}
+{"count":1,"key":"test-key","level":"warn","limit":5,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.194Z"}
+{"count":1,"key":"user:test","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.195Z"}
+{"count":1,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":2,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":3,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":4,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":5,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":6,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":7,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":8,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":9,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"count":10,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:05.196Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:05.210Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:05.210Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:05.211Z"}
+{"level":"warn","message":"Circuit breaker [test]: OPEN → HALF_OPEN","timestamp":"2026-03-07T15:02:05.362Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:58.857Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:58.857Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:58.858Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:02:58.871Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.874Z"}
+{"count":1,"key":"test-key","level":"warn","limit":5,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.872Z"}
+{"count":1,"key":"user:test","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.873Z"}
+{"count":1,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.873Z"}
+{"count":2,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.873Z"}
+{"count":3,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.873Z"}
+{"count":4,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.873Z"}
+{"count":5,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.873Z"}
+{"count":6,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.873Z"}
+{"count":7,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.874Z"}
+{"count":8,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.874Z"}
+{"count":9,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.874Z"}
+{"count":10,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:02:58.874Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.874Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.875Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.875Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.876Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.876Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.876Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.876Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.876Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.877Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.877Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.877Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.877Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.877Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.877Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.877Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.878Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":2,"level":"info","message":"Compliance zone registered","name":"CUSTOM","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:02:58.879Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:02:58.879Z"}
+{"level":"warn","message":"Circuit breaker [test]: OPEN → HALF_OPEN","timestamp":"2026-03-07T15:02:59.009Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.207Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.207Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.207Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.207Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.208Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.208Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.208Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.209Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.210Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":2,"level":"info","message":"Compliance zone registered","name":"CUSTOM","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":31,"level":"info","message":"Compliance zone registered","name":"GDPR","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":1,"level":"info","message":"Compliance zone registered","name":"CCPA","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":4,"level":"info","message":"Compliance zone registered","name":"RESTRICTED","timestamp":"2026-03-07T15:09:09.211Z"}
+{"countries":0,"level":"info","message":"Compliance zone registered","name":"BLOCKED","timestamp":"2026-03-07T15:09:09.211Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:09:09.232Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:09:09.233Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:09:09.233Z"}
+{"level":"warn","message":"Circuit breaker [test]: CLOSED → OPEN","timestamp":"2026-03-07T15:09:09.269Z"}
+{"count":1,"key":"test-key","level":"warn","limit":5,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.271Z"}
+{"count":1,"key":"user:test","level":"warn","limit":50,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.275Z"}
+{"count":1,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.276Z"}
+{"count":2,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.276Z"}
+{"count":3,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"count":4,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"count":5,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"count":6,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"count":7,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"count":8,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"count":9,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"count":10,"key":"limited-key","level":"warn","limit":2,"message":"Fallback limiter active (Redis unavailable)","timestamp":"2026-03-07T15:09:09.281Z"}
+{"level":"warn","message":"Circuit breaker [test]: OPEN → HALF_OPEN","timestamp":"2026-03-07T15:09:09.384Z"}
