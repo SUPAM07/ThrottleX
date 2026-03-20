@@ -1,12 +1,21 @@
 import 'dotenv/config';
 import app from './app';
 import { getRedisClient, closeRedis } from './redis/redisClient';
+import redisConfig from './config/redisConfig';
 import logger from './utils/logger';
 
 const PORT = parseInt(process.env.PORT || '3000', 10);
 const HOST = process.env.HOST || '0.0.0.0';
 
 async function start() {
+  if (!redisConfig.isExplicitlyConfigured) {
+    logger.warn(
+      'REDIS_URL is not set — Redis is disabled. ' +
+      'Rate limiting will use the in-memory fallback (not suitable for multi-instance production). ' +
+      'Set REDIS_URL to enable distributed rate limiting.'
+    );
+  }
+
   // Initialize Redis connection
   const redis = getRedisClient();
   try {

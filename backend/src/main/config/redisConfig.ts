@@ -14,7 +14,12 @@ export interface RedisConfig {
   keepAlive: number;
   keyPrefix: string;
   tls?: boolean;
+  /** True when REDIS_URL is explicitly provided via environment variables. */
+  isExplicitlyConfigured: boolean;
 }
+
+// Redis is considered explicitly configured only when REDIS_URL is set in the environment.
+const isExplicitlyConfigured = !!process.env.REDIS_URL;
 
 const redisConfig: RedisConfig = {
   url: process.env.REDIS_URL || 'redis://localhost:6379',
@@ -25,10 +30,13 @@ const redisConfig: RedisConfig = {
   commandTimeout: parseInt(process.env.REDIS_COMMAND_TIMEOUT || '2000', 10),
   poolSize: parseInt(process.env.REDIS_POOL_SIZE || '10', 10),
   enableReadyCheck: true,
-  lazyConnect: false,
+  // Use lazy connect when no explicit REDIS_URL is provided so the app does not
+  // spam connection errors on startup (the in-memory fallback handles requests).
+  lazyConnect: isExplicitlyConfigured ? false : true,
   keepAlive: 30000,
   keyPrefix: 'rl:',
   tls: process.env.REDIS_TLS === 'true',
+  isExplicitlyConfigured,
 };
 
 export default redisConfig;

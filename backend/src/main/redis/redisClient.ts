@@ -16,7 +16,10 @@ export function createRedisClient(): Redis {
     keepAlive: redisConfig.keepAlive,
     tls: redisConfig.tls ? {} : undefined,
     retryStrategy(times) {
-      if (times > 10) {
+      // When Redis is not explicitly configured limit retries to avoid log spam.
+      // The in-memory FallbackLimiter handles requests while Redis is unavailable.
+      const maxAttempts = redisConfig.isExplicitlyConfigured ? 10 : 3;
+      if (times > maxAttempts) {
         logger.error('Redis: max reconnection attempts reached');
         return null;
       }
