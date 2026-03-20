@@ -8,7 +8,8 @@ import type {
   RateLimitConfig,
 } from '@/types';
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+//const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+const BASE_URL = 'https://throttlex-2.onrender.com';
 const ADMIN_KEY = 'change-me-in-production-admin-secret-xyz';
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
