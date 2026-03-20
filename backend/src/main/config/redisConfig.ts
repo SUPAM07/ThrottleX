@@ -13,6 +13,7 @@ export interface RedisConfig {
   lazyConnect: boolean;
   keepAlive: number;
   keyPrefix: string;
+  tls?: boolean;
 }
 
 const redisConfig: RedisConfig = {
@@ -27,6 +28,7 @@ const redisConfig: RedisConfig = {
   lazyConnect: false,
   keepAlive: 30000,
   keyPrefix: 'rl:',
+  tls: process.env.REDIS_TLS === 'true',
 };
 
 export default redisConfig;

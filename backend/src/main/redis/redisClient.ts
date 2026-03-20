@@ -14,6 +14,7 @@ export function createRedisClient(): Redis {
     enableReadyCheck: redisConfig.enableReadyCheck,
     lazyConnect: redisConfig.lazyConnect,
     keepAlive: redisConfig.keepAlive,
+    tls: redisConfig.tls ? {} : undefined,
     retryStrategy(times) {
       if (times > 10) {
         logger.error('Redis: max reconnection attempts reached');

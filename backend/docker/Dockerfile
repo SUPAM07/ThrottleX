@@ -4,7 +4,7 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci --only=production=false
+RUN npm install
 
 COPY tsconfig.json ./
 COPY src ./src
@@ -20,8 +20,10 @@ WORKDIR /app
 
 RUN addgroup -g 1001 -S nodejs && adduser -S throttlex -u 1001
 
+RUN mkdir -p /app/logs && chown -R throttlex:nodejs /app/logs
+
 COPY package*.json ./
-RUN npm ci --only=production && npm cache clean --force
+RUN npm install --omit=dev && npm cache clean --force
 
 COPY --from=builder --chown=throttlex:nodejs /app/dist ./dist
 
