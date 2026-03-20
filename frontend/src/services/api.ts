@@ -8,10 +8,12 @@ import type {
   RateLimitConfig,
 } from '@/types';
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 const ADMIN_KEY = 'change-me-in-production-admin-secret-xyz';
 
 async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(url, {
+  const fullUrl = url.startsWith('http') ? url : `${BASE_URL}${url}`;
+  const res = await fetch(fullUrl, {
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -52,7 +54,8 @@ export async function checkRateLimit(
 }
 
 export async function resetRateLimit(key: string): Promise<void> {
-  await fetch(`/api/ratelimit/reset/${encodeURIComponent(key)}`, {
+  const url = `${BASE_URL}/api/ratelimit/reset/${encodeURIComponent(key)}`;
+  await fetch(url, {
     method: 'DELETE',
   });
 }
@@ -79,7 +82,8 @@ export async function setAdminLimit(config: RateLimitConfig): Promise<any> {
 }
 
 export async function deleteAdminKey(key: string): Promise<void> {
-  await fetch(`/admin/limits/${encodeURIComponent(key)}`, {
+  const url = `${BASE_URL}/admin/limits/${encodeURIComponent(key)}`;
+  await fetch(url, {
     method: 'DELETE',
     headers: adminHeaders(),
   });
