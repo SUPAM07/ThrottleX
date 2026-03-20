@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import Redis from 'ioredis';
-import { RateLimiter } from '../../src/main/services/ratelimit/core/rateLimiter';
-import { ALGORITHMS } from '../../src/main/utils/constants';
+import { RateLimiter } from '../../backend/src/main/services/ratelimit/core/rateLimiter';
+import { ALGORITHMS } from '../../backend/src/main/utils/constants';
 
 // Initialize the standalone rate limiter
 const redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379');
