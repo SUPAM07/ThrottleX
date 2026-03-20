@@ -3,7 +3,7 @@ version: '3.9'
 services:
   redis:
     image: redis:7.2-alpine
-    container_name: rate-limiter-redis
+    container_name: throttlex-redis
     restart: unless-stopped
     ports:
       - "6379:6379"
@@ -16,13 +16,13 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - rate-limiter-net
+      - throttlex-net
 
-  rate-limiter:
+  backend:
     build:
-      context: ..
+      context: ../backend
       dockerfile: docker/Dockerfile
-    container_name: rate-limiter-app
+    container_name: throttlex-backend
     restart: unless-stopped
     ports:
       - "3000:3000"
@@ -36,8 +36,6 @@ services:
       GEO_ENABLED: "true"
       METRICS_ENABLED: "true"
       LOG_LEVEL: info
-    env_file:
-      - ../.env
     depends_on:
       redis:
         condition: service_healthy
@@ -48,7 +46,7 @@ services:
       retries: 3
       start_period: 20s
     networks:
-      - rate-limiter-net
+      - throttlex-net
     deploy:
       resources:
         limits:
@@ -58,10 +56,28 @@ services:
           cpus: '0.5'
           memory: 128M
 
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: docker/Dockerfile
+    container_name: throttlex-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - throttlex-net
+
 volumes:
   redis_data:
     driver: local
 
 networks:
-  rate-limiter-net:
+  throttlex-net:
     driver: bridge

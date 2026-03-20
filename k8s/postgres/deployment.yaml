@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: throttlex-postgres
+  labels:
+    app: throttlex-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: throttlex-postgres
+  template:
+    metadata:
+      labels:
+        app: throttlex-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15-alpine
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: throttlex
+            - name: POSTGRES_USER
+              value: throttlex
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: throttlex-postgres-secret
+                  key: password
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"
+          volumeMounts:
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-data
+          emptyDir: {}

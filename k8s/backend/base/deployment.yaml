@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rate-limiter
+  labels:
+    app: rate-limiter
+    version: "1.0.0"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rate-limiter
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: rate-limiter
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/metrics"
+        prometheus.io/port: "3000"
+    spec:
+      containers:
+        - name: rate-limiter
+          image: rate-limiter:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: rate-limiter-config
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "128Mi"
+            limits:
+              cpu: "2000m"
+              memory: "512Mi"
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3
+          startupProbe:
+            httpGet:
+              path: /health/live
+              port: 3000
+            failureThreshold: 30
+            periodSeconds: 2
+      terminationGracePeriodSeconds: 30
