@@ -26,7 +26,16 @@ const app = express();
 
 // Security & compression
 app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGINS?.split(',') || '*' }));
+const corsOptions = {
+  origin: process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',').map(o => o.trim())
+    : true,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  maxAge: 86400,
+};
+app.use(cors(corsOptions));
 app.use(compression());
 
 // Body parsing
