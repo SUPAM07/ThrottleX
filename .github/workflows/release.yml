@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci
+      
+      - name: Build backend
+        working-directory: backend
+        run: npm run build
+      
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+      
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+      
+      - name: Build and push backend Docker image
+        run: |
+          docker build -t throttlex/backend:${{ github.ref_name }} \
+            -t throttlex/backend:latest \
+            -f backend/docker/Dockerfile backend/
+      
+      - name: Build and push frontend Docker image
+        run: |
+          docker build -t throttlex/frontend:${{ github.ref_name }} \
+            -t throttlex/frontend:latest \
+            -f frontend/docker/Dockerfile frontend/
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true

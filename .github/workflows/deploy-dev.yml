@@ -1,0 +1,21 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy to dev environment
+        run: |
+          echo "Deploying to development environment"
+          bash scripts/k8s/deploy-dev.sh

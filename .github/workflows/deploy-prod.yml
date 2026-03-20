@@ -1,0 +1,23 @@
+name: Deploy to Production
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: []
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production environment"
+          bash scripts/k8s/deploy-prod.sh
