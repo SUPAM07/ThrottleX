@@ -1,1 +1,0 @@
-{"version":3,"file":"adminAuthConfig.d.ts","sourceRoot":"","sources":["../../../src/main/config/adminAuthConfig.ts"],"names":[],"mappings":"AAGA,MAAM,WAAW,eAAe;IAC9B,MAAM,EAAE,MAAM,CAAC;IACf,SAAS,EAAE,MAAM,CAAC;IAClB,UAAU,EAAE,MAAM,EAAE,CAAC;CACtB;AAED,QAAA,MAAM,eAAe,EAAE,eAItB,CAAC;AAEF,eAAe,eAAe,CAAC"}
