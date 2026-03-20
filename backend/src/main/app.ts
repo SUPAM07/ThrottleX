@@ -23,16 +23,35 @@ import { swaggerOptions } from './config/openApiConfig';
 import logger from './utils/logger';
 
 const app = express();
+app.set('trust proxy', 1); // Trust Render proxy
 
 // Security & compression
 app.use(helmet());
+
+const ALLOWED_ORIGINS = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'https://throttlex-frontend1-vgpg.onrender.com', // Add the specific Render frontend
+];
+
 const corsOptions = {
-  origin: process.env.CORS_ORIGINS
-    ? process.env.CORS_ORIGINS.split(',').map(o => o.trim())
-    : true,
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+    const envOrigins = process.env.CORS_ORIGINS
+      ? process.env.CORS_ORIGINS.split(',').map(o => o.trim())
+      : [];
+    
+    const allAllowed = [...ALLOWED_ORIGINS, ...envOrigins];
+    
+    // Allow if no origin (e.g. server-to-server) or in allowed list or matching onrender.com
+    if (!origin || allAllowed.includes(origin) || origin.endsWith('onrender.com')) {
+      callback(null, true);
+    } else {
+      callback(null, false);
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'x-admin-key'],
   maxAge: 86400,
 };
 app.use(cors(corsOptions));
