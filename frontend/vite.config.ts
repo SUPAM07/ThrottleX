@@ -17,31 +17,31 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/rate-limit': {
-        target: 'http://127.0.0.1:3000',
+        target: 'https://throttlex-2.onrender.com',
         changeOrigin: true,
       },
       '/api': {
-        target: 'http://127.0.0.1:3000',
+        target: 'https://throttlex-2.onrender.com',
         changeOrigin: true,
       },
       '/actuator': {
-        target: 'http://127.0.0.1:3000',
+        target: 'https://throttlex-2.onrender.com',
         changeOrigin: true,
       },
       '/health': {
-        target: 'http://127.0.0.1:3000',
+        target: 'https://throttlex-2.onrender.com',
         changeOrigin: true,
       },
       '/metrics': {
-        target: 'http://127.0.0.1:3000',
+        target: 'https://throttlex-2.onrender.com',
         changeOrigin: true,
       },
       '/admin': {
-        target: 'http://127.0.0.1:3000',
+        target: 'https://throttlex-2.onrender.com',
         changeOrigin: true,
       },
       '/benchmark': {
-        target: 'http://127.0.0.1:3000',
+        target: 'https://throttlex-2.onrender.com',
         changeOrigin: true,
       },
     },
