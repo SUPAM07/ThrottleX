@@ -1,0 +1,51 @@
+services:
+  - type: web
+    name: throttlex-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: LOG_LEVEL
+        value: info
+      - key: REDIS_URL
+        sync: false
+      - key: REDIS_PASSWORD
+        sync: false
+      - key: REDIS_TLS
+        value: true
+      - key: DEFAULT_RATE_LIMIT
+        value: 100
+      - key: DEFAULT_WINDOW_MS
+        value: 60000
+      - key: DEFAULT_ALGORITHM
+        value: token_bucket
+      - key: ADAPTIVE_ENABLED
+        value: true
+      - key: GEO_ENABLED
+        value: true
+      - key: METRICS_ENABLED
+        value: true
+      - key: ADMIN_API_KEY
+        sync: false
+      - key: CIRCUIT_BREAKER_THRESHOLD
+        value: 5
+      - key: CIRCUIT_BREAKER_TIMEOUT_MS
+        value: 30000
+
+  - type: static
+    name: throttlex-frontend
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        sync: false
+      - key: VITE_APP_TITLE
+        value: ThrottleX Dashboard
+      - key: VITE_APP_VERSION
+        value: 1.0.0
