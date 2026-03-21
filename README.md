@@ -1,4 +1,4 @@
-# 🚀 ThrottleX
+# 🚀 Limitron
 
 > Production-ready distributed rate limiter monorepo with **5 algorithms**, **Redis backing**, **adaptive ML rate limiting**, **geographic awareness**, and a **React-based Admin Dashboard**.
 
