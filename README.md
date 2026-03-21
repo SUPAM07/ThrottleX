@@ -19,7 +19,7 @@
 ## 📸 Preview
 
 <p align="center">
-  <img src="./assets/homepage.png" width="90%" alt="VSCode Portfolio Preview"/>
+  <img src="./assets/dashboard.png" width="90%" alt="VSCode Portfolio Preview"/>
 </p>
 
 ---
