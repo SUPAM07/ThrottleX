@@ -1,14 +1,28 @@
-# 🚀 Distributed Rate Limiter
+# 🚀 ThrottleX
 
-> Production-ready distributed rate limiter with **5 algorithms**, **Redis backing**, **adaptive ML rate limiting**, and **geographic awareness**.
+> Production-ready distributed rate limiter monorepo with **5 algorithms**, **Redis backing**, **adaptive ML rate limiting**, **geographic awareness**, and a **React-based Admin Dashboard**.
 
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green.svg)](https://nodejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org)
 [![Redis](https://img.shields.io/badge/Redis-7.2-red.svg)](https://redis.io)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://react.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
+## 🚀 Live Demo
 
+🔗 https://throttlex-2.onrender.com
+🔗 https://throttlex-frontend1-vgpg.onrender.com
+
+---
+
+## 📸 Preview
+
+<p align="center">
+  <img src="./assets/homepage.png" width="90%" alt="VSCode Portfolio Preview"/>
+</p>
+
+---
 ## ✨ Key Features
 
 | Feature | Description |
@@ -18,6 +32,7 @@
 | 🤖 **Adaptive ML** | EMA + Z-score anomaly detection for automatic limit optimization |
 | 🌍 **Geo Limiting** | Country-level limits with Cloudflare/CloudFront CDN header support |
 | 🌐 **Distributed** | Redis-backed atomic Lua scripts for multi-instance safety |
+| 📊 **Admin Dashboard**| React + Vite frontend with Radix UI and Recharts for metrics visualization |
 | ⚡ **Production Ready** | Circuit breaker, fallback limiter, Prometheus metrics |
 | 🛡️ **Thread Safe** | Atomic Redis operations — no race conditions |
 | 📊 **Rich Metrics** | Prometheus + P50/P95/P99 latency histograms |
@@ -28,73 +43,69 @@
 
 ## 📁 Project Structure
 
-```
-distributed-rate-limiter/
-├── src/
-│   ├── adaptive/           # ML-driven adaptive rate limiting (EMA + Z-score)
-│   ├── config/             # Redis, algorithm, admin, geo, OpenAPI configs
-│   ├── controllers/        # Express route handlers
-│   ├── geo/                # Geographic rate limiting + compliance zones
-│   ├── middlewares/        # Rate limit, API key auth, geo, error handler
-│   ├── models/             # TypeScript interfaces and DTOs
-│   ├── observability/      # Prometheus metrics, health checks
-│   ├── ratelimit/
-│   │   ├── algorithms/     # 5 algorithm implementations
-│   │   ├── core/           # Factory, interfaces
-│   │   └── keys/           # Redis key generation
-│   ├── redis/
-│   │   └── luaScripts/     # Atomic Lua scripts (1 per algorithm)
-│   ├── resilience/         # Circuit breaker, fallback, retry
-│   ├── routes/             # Express routers
-│   ├── security/           # API keys, IP extraction, tenant resolution
-│   ├── services/           # Business logic orchestration
-│   ├── utils/              # Logger, constants, helpers, validation
-│   ├── app.ts              # Express app
-│   └── server.ts           # Entry point with graceful shutdown
-├── tests/
-│   ├── unit/               # 7 unit test files
-│   ├── integration/        # 3 integration test files
-│   └── load/               # Load & stress tests
-├── docker/                 # Dockerfile + Docker Compose
-├── k8s/                    # Kubernetes base manifests + environments
-├── scripts/                # benchmark.sh, redis-init.sh
-└── docs/                   # Architecture, algorithm deep-dives
+```text
+ThrottleX/
+├── backend/            # Express API, Redis Lua scripts, Controllers
+│   ├── src/            # Core backend logic (algorithms, adaptive ML, geo)
+│   └── tests/          # Unit, integration, and load tests
+├── frontend/           # React + Vite admin dashboard
+│   └── src/            # Components, pages, and API integration
+├── shared/             # Shared TypeScript types and utilities
+├── docker/             # Dockerfile + Docker Compose setups
+├── docs/               # Architecture and algorithm deep-dives
+├── k8s/                # Kubernetes base manifests + environments
+└── scripts/            # Utility scripts (benchmark, redis-init)
 ```
 
 ---
 
 ## 🚀 Quick Start
 
+### Prerequisites
+- Node.js 18+ (20+ recommended)
+- npm (or pnpm)
+- Redis running locally on port 6379 (for local development without Docker)
+
 ### Using Docker Compose (Recommended)
 
 ```bash
 # Clone & start
 git clone <repo-url>
-cd distributed-rate-limiter
+cd ThrottleX
 
-# Start Redis + app
+# Start Redis + backend + frontend
 docker-compose -f docker/docker-compose.yml up --build -d
 
-# Verify
+# Verify Backend
 curl http://localhost:3000/health
+
+# Access Dashboard
+# Open http://localhost:5173 in your browser
 ```
 
 ### Local Development
 
-```bash
-# Prerequisites: Node 20+, Redis running on localhost:6379
+This project uses npm workspaces. You can run all services concurrently from the root.
 
+```bash
+# Install dependencies for all workspaces
 npm install
-cp .env .env.local   # customize as needed
-npm run dev          # ts-node-dev hot reload
+
+# Setup environment variables
+cp .env.example .env
 
 # Run tests (no Redis needed for unit tests)
 npm test
 ```
 
+- The backend will start on `http://localhost:3000`.
+- The frontend admin dashboard will start on `http://localhost:5173`.
+
 ---
 
 ## 📡 API Reference
+
+*(See the [Docs](docs/) for more extensive documentation)*
 
 ### Rate Limit Check
 ```http
@@ -108,6 +119,7 @@ Content-Type: application/json
   "windowMs": 60000
 }
 ```
+
 **Response:**
 ```json
 {
@@ -200,7 +212,7 @@ Every rate-limited response includes:
 ## 🐳 Docker
 
 ```bash
-# Standard deployment
+# Standard Docker deployment
 docker-compose -f docker/docker-compose.yml up -d
 
 # Redis cluster (6-node: 3 masters + 3 replicas)
@@ -225,6 +237,8 @@ kubectl apply -f k8s/environments/production/
 ---
 
 ## 🧪 Testing
+
+Commands can be run from the root using npm workspaces:
 
 ```bash
 npm test                  # All unit tests
@@ -253,4 +267,4 @@ npm run benchmark         # Benchmark scenario runner
 
 ## 📄 License
 
-MIT © Distributed Rate Limiter Team
+MIT © ThrottleX Team
